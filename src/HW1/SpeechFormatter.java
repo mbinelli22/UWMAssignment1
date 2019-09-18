@@ -84,5 +84,24 @@ public class SpeechFormatter {
 
 	public static void main(String[] args) {
 		Scanner scr = new Scanner(System.in);
+		System.out.println("Hello and welcome to this super neat program.");
+		System.out.println("Today you will be formating super neat speeches.");
+		System.out.println("Below are your options for super neat speeches.");
+		System.out.println("------------------------------------------------");
+		System.out.println("1:  Abraham Lincoln's Gettysburg Address");
+		System.out.println("2:  George Washington's retirement speech");
+		System.out.println("3:  Lou Gehrig baseball speech");
+		System.out.println("------------------------------------------------");
+		System.out.println("Let's get started shall we?");
+		System.out.println("Please select a speech to format. (1, 2, or 3): ");
+		int speechChoice = scr.nextInt();
+		System.out.println("Please enter number of indents per first line, between 0-2: ");
+		int indentChoice = scr.nextInt();
+		System.out.println("Please enter number of characters allowed per line, between 30-120: ");
+		int characterChoice = scr.nextInt();
+		System.out.println("Please enter number of sentences per paragraph, between 3-8: ");
+		int sentenceChoice = scr.nextInt();
+		
+		
 	}
 }
