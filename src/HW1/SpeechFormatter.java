@@ -93,10 +93,36 @@ public class SpeechFormatter {
 		System.out.println("3:  Lou Gehrig baseball speech");
 		System.out.println("------------------------------------------------");
 		System.out.println("Let's get started shall we?");
+		
+		//User input 1 & restrictions
 		System.out.println("Please select a speech to format. (1, 2, or 3): ");
-		int speechChoice = scr.nextInt();
+		String speechChoice = scr.nextLine();
+		while(speechChoice.isEmpty() == true || speechChoice.contains(" ")) {
+			System.out.println("Error: Nothing entered. ");
+			System.out.println("Please enter a 1, 2 or 3: ");
+			speechChoice = scr.nextLine();
+		}
+		int choiceNum = Integer.parseInt(speechChoice);
+		while(!(choiceNum >= 1 && choiceNum <= 3)) {
+			System.out.println("Error: invalid number selected. Number must be from 1-3.");
+			System.out.println("Please enter a VALID number 1-3: ");
+			choiceNum = scr.nextInt();
+		}
+		if(choiceNum == 1) {
+			System.out.println("You chose: Gettysburg Address");
+		}
+		else if(choiceNum == 2) {
+			System.out.println("You chose: Retirement speech");
+		}
+		else
+			System.out.println("You chose: Baseball speech");
+		
+		//User Input 2 & restricions
 		System.out.println("Please enter number of indents per first line, between 0-2: ");
 		int indentChoice = scr.nextInt();
+		
+		
+		
 		System.out.println("Please enter number of characters allowed per line, between 30-120: ");
 		int characterChoice = scr.nextInt();
 		System.out.println("Please enter number of sentences per paragraph, between 3-8: ");
