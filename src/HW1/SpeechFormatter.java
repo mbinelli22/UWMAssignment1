@@ -119,12 +119,34 @@ public class SpeechFormatter {
 		
 		//User Input 2 & restricions
 		System.out.println("Please enter number of indents per first line, between 0-2: ");
-		int indentChoice = scr.nextInt();
+		String indentChoice = scr.nextLine();
+		while(indentChoice.isEmpty() == true || indentChoice.contains(" ") || indentChoice.contains("  ") || indentChoice.contains("   ") 
+				|| indentChoice.contains("    ") || indentChoice.contains("    ") || indentChoice.contains("       ")){
+			System.out.println("Error: Nothing entered. ");
+			System.out.println("Please enter a 0, 1 or 2: ");
+			indentChoice = scr.nextLine();
+		}
+		int indentNum = Integer.parseInt(indentChoice);
+		while(!(indentNum >= 0 && indentNum <= 2)) {
+			System.out.println("Error: invalid number selected. Number must be from 0-2.");
+			System.out.println("Please enter a VALID number 0-2: ");
+			indentNum = scr.nextInt();
+		}
+		if(indentNum == 0) {
+			System.out.println("'0' is a valid number");
+		}
+		else if(indentNum == 1 ) {
+			System.out.println("'1' is a valid number");
+		}
+		else
+			System.out.println("'2' is a valid number");
 		
 		
-		
+		//User input 3 & restrictions
 		System.out.println("Please enter number of characters allowed per line, between 30-120: ");
 		int characterChoice = scr.nextInt();
+		
+		//User input 4 & restrictions
 		System.out.println("Please enter number of sentences per paragraph, between 3-8: ");
 		int sentenceChoice = scr.nextInt();
 		
