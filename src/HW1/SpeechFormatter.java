@@ -144,12 +144,40 @@ public class SpeechFormatter {
 		
 		//User input 3 & restrictions
 		System.out.println("Please enter number of characters allowed per line, between 30-120: ");
-		int characterChoice = scr.nextInt();
+		String characterChoice = scr.nextLine();
+		while(characterChoice.isEmpty() == true || characterChoice.contains(" ") || characterChoice.contains("  ") || characterChoice.contains("   ") 
+				|| characterChoice.contains("    ") || characterChoice.contains("    ") || characterChoice.contains("       ")){
+			System.out.println("Error: Nothing entered. ");
+			System.out.println("Please enter a number between 30 and 120: ");
+			characterChoice = scr.nextLine();
+		}
+		int characterNum = Integer.parseInt(characterChoice);
+		while(!(characterNum >= 30 && characterNum <= 120)) {
+			System.out.println("Error: invalid number selected. Number must be from 30-120.");
+			System.out.println("Please enter a VALID number 30-120: ");
+			characterNum = scr.nextInt();
+		}
+		System.out.println("'" + characterNum + "' is a valid number");
 		
 		//User input 4 & restrictions
 		System.out.println("Please enter number of sentences per paragraph, between 3-8: ");
-		int sentenceChoice = scr.nextInt();
+		String sentenceChoice = scr.nextLine();
+		while(sentenceChoice.isEmpty() == true || sentenceChoice.contains(" ") || sentenceChoice.contains("  ") || sentenceChoice.contains("   ") 
+				|| sentenceChoice.contains("    ") || sentenceChoice.contains("    ") || sentenceChoice.contains("       ")){
+			System.out.println("Error: Nothing entered. ");
+			System.out.println("Please enter a number between 3 and 8: ");
+			sentenceChoice = scr.nextLine();
+		}
+		int sentenceNum = Integer.parseInt(sentenceChoice);
+		while(!(sentenceNum >= 3 && sentenceNum <= 8)) {
+			System.out.println("Error: invalid number selected. Number must be from 3-8.");
+			System.out.println("Please enter a VALID number 3-8: ");
+			sentenceNum = scr.nextInt();
+		}
+		System.out.println("'" + sentenceNum + "' is a valid number");
 		
 		
+		
+		scr.close();
 	}
 }
